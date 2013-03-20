@@ -20,41 +20,56 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<div class="post" id="post-<?php the_ID(); ?>">
+	<div class="post image_attachment" id="post-<?php the_ID(); ?>">
 	
-	<h2 class="post_title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h2>
+		<h2 class="post_title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment" title="<?php _e( 'Back to gallery', 'commentpress-theme' ) ?>"><?php echo get_the_title($post->post_parent); ?></a> <span>&raquo; <a href="<?php the_permalink(); ?>" class="attachment_permalink" title="<?php _e( 'Permalink for this image', 'commentpress-theme' ) ?>"><?php the_title(); ?></a></span></h2>
+		
+		<p class="back_button"><a class="button" href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment" title="<?php _e( 'Back to gallery', 'commentpress-theme' ) ?>"><?php _e( 'Back to gallery', 'commentpress-theme' ); ?></a></p>
+	
+		<div class="the_image_attachment">
 
-	<p><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
-
-
-
-   <?php if ( !empty($post->post_excerpt) ) the_excerpt(); // this is the "caption" ?>
-
-		<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
+			<p class="image_attachment_wrap"><a class="image_attachment_link" href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
+		
+			<div class="image_attachment_caption">
+			<?php 
+			// show "caption" if present
+			if ( !empty($post->post_excerpt) ) {
+				the_excerpt();
+			} else {
+				?>
+				<p><?php _e( 'Untitled', 'commentpress-theme' ) ?></p>
+				<?php	
+			}
+			?>
+			</div>
+			
+		</div>
+	
+		<?php the_content('<p class="serif">Read the rest of the text &raquo;</p>'); ?>
 
 		<p class="postmetadata" style="clear: left;">
-			This entry was posted on <?php the_time('l, F jS, Y') ?> at <?php the_time() ?>
+			This image was posted on <?php the_time('l, F jS, Y') ?> at <?php the_time() ?>
 			and is filed under <?php the_category(', ') ?>.
 			<?php the_taxonomies(); ?>
-			You can follow any responses to this entry through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.
+			You can follow any comments on this image through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.
 
 			<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 				// Both Comments and Pings are open ?>
-				You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
+				You are welcome to <a href="#respond">leave a comment</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
 
 			<?php } elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 				// Only Pings are Open ?>
-				Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
+				Comments are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
 
 			<?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 				// Comments are open, Pings are not ?>
-				You can skip to the end and leave a response. Pinging is currently not allowed.
+				You are welcome to <a href="#respond">leave a comment</a>. Pinging is currently not allowed.
 
 			<?php } elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 				// Neither Comments, nor Pings are open ?>
 				Both comments and pings are currently closed.
 
-			<?php } edit_post_link('Edit this entry.','',''); ?>
+			<?php } ?>
 		</p>
 
 
