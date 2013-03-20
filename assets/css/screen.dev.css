@@ -2389,6 +2389,30 @@ ol.footnotes,
 
 
 
+/*
+--------------------------------------------------------------------------------
+Compatibility with JetPack plugin
+--------------------------------------------------------------------------------
+*/
+
+#content div.sharedaddy div.sd-block
+{
+	padding-top: 1.5em;
+}
+
+p.comment-subscription-form
+{
+	font-size: 70%;
+	margin: 0.5em 0;
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
 /* 
 --------------------------------------------------------------------------------
 Comment Orphaning
@@ -2559,6 +2583,12 @@ RESPONSIVENESS
 		padding-bottom: 0.8em;
 	}
 	
+	/* JetPack subscriptions */
+	p.comment-subscription-form
+	{
+		font-size: 75%;
+		margin: 1.5em 0;
+	}	
 }
 
 

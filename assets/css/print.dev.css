@@ -89,7 +89,11 @@ Updated by Christian Wach for CommentPress Core
 	#header img,
 	#navigation,
 	.page_navigation,
-	#switcher
+	#switcher,
+	/* JetPack sharing */
+	div.sharedaddy, 
+	#content div.sharedaddy, 
+	#main div.sharedaddy
 	{
 		display: none !important;
 	}
@@ -118,6 +122,8 @@ Updated by Christian Wach for CommentPress Core
 	#title
 	{
 		float: none;
+		margin: 0;
+		padding: 0;
 	}
 	
 	/* show Site Title */
@@ -171,8 +177,10 @@ Updated by Christian Wach for CommentPress Core
 	#page_wrapper,
 	.sidebar_minimiser
 	{
-		width: auto;
-		height: auto;
+		float: none;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
 		padding: 0;
 		margin: 0;
 		border: none;
@@ -196,7 +204,7 @@ Updated by Christian Wach for CommentPress Core
 		padding: 0 0 20pt 24pt;
 		font-size: 100%;
 		border: none;
-		border-bottom: 2px solid #ccc;
+		border-bottom: 1px solid #ccc;
 	}
 	
 	body.commentpress_page .post
@@ -272,10 +280,16 @@ Updated by Christian Wach for CommentPress Core
 		line-height: 1.5;
 	}
 	
+	p.selected_para 
+	{
+		color: #000;
+	}
+	
 	.post ul,
 	.post ol
 	{
-		margin: 1em 0;
+		width: auto !important;
+		margin: 1em 0 1em 2em;
 		padding: 0;
 		line-height: 1.5;
 	}
@@ -296,6 +310,36 @@ Updated by Christian Wach for CommentPress Core
 	{
 		line-height: 1.5;
 	}
+	
+	.post pre
+	{
+		padding: 1em;
+		white-space: pre-wrap;
+		overflow: visible;
+	}
+	
+	/*
+	// would be nice, but makes the page width wider than the paper
+	.post a[href]:after
+	{
+		content: " (" attr(href) ")";
+	}
+	
+	// don't show certain link content
+	.post span.para_marker a:after,
+	.post span.commenticonbox a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after
+	{
+		content: "";
+	}
+	
+	.post acronym[title]:after,
+	.post abbr[title]:after
+	{
+		content: " (" attr(title) ")";
+	}
+	*/
 	
 	span.captioned_image
 	{
@@ -346,6 +390,12 @@ Updated by Christian Wach for CommentPress Core
 	blockquote p span.para_marker
 	{
 		margin-left: -10pt;
+	}
+	
+	ul span.para_marker,
+	ol span.para_marker
+	{
+		margin-left: -2em;
 	}
 	
 	#content .post span.para_marker a,
@@ -466,7 +516,8 @@ Updated by Christian Wach for CommentPress Core
 	{
 		position: static !important;
 		width: auto !important;
-		border-bottom: 2px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 16pt;
 	}
 	
 	#sidebar .sidebar_container .sidebar_header
@@ -478,6 +529,7 @@ Updated by Christian Wach for CommentPress Core
 	#sidebar .sidebar_container .sidebar_header h2
 	{
 		display: block;
+		margin-top: 0;
 		padding-top: 10pt;
 		font-size: 16pt;
 		font-weight: bold;
@@ -497,7 +549,7 @@ Updated by Christian Wach for CommentPress Core
 	{
 		text-transform: none;
 		color: #000;
-		margin: 1em 0;
+		margin: 1em 0 0 0;
 		padding: 0 0 0.2em 0;
 		font-size: 12pt;
 		font-weight: bold;
@@ -527,18 +579,22 @@ Updated by Christian Wach for CommentPress Core
 	}
 
 	ol.commentlist li,
-	.post ol.commentlist li
+	.post ol.commentlist li,
+	ol.commentlist li.comment,
+	.post ol.commentlist li.comment
 	{
 		list-style: decimal;
-		margin: 0 0 0 12pt;
+		margin: 0 0 0 20pt;
 		padding: 0;
 	}
 
 	ol.children li,
-	.post ol.children li
+	.post ol.children li,
+	ol.children li.comment,
+	.post ol.children li.comment
 	{
 		list-style: decimal;
-		margin: 0 0 0 12pt;
+		margin: 0 0 0 20pt;
 		padding: 0;
 	}
 
@@ -553,7 +609,7 @@ Updated by Christian Wach for CommentPress Core
 	div#comments_sidebar .comments_container .comment-content
 	{
 		font-size: 100%;
-		padding: 0.2em 0 1em 0;
+		padding: 0.2em 0 0.5em 0;
 		border: none !important;
 	}
 	
@@ -572,30 +628,27 @@ Updated by Christian Wach for CommentPress Core
 	.comment-identifier cite,
 	.comment-identifier a.comment_permalink
 	{
+		text-transform: none;
 		letter-spacing: 0;
 		color: #aaa !important;
 		display: inline;
 		font-size: 7pt;
 		margin: 0;
 		padding: 0;
+		font-weight: bold;
+		color: #222;
 	}
 	
-	.comment-identifier cite
-	{
-	}
-	
-	.comment-identifier cite a,
-	.comment-identifier cite a:hover,
-	.comment-identifier cite a:visited,
-	.comment-identifier cite a:active
+	.comment-identifier cite a
 	{
 		font-weight: bold;
-		color: #aaa;
+		color: #222;
 		text-decoration: none;
 	}
 	
-	.comment-identifier a
+	.comment-identifier a.comment_permalink
 	{
+		font-weight: normal;
 		color: #aaa;
 		text-decoration: none;
 	}
@@ -757,6 +810,7 @@ Updated by Christian Wach for CommentPress Core
 	
 	table
 	{
+		width: auto;
 	}
 	
 	table th,
@@ -764,7 +818,7 @@ Updated by Christian Wach for CommentPress Core
 	table td,
 	.post table td
 	{
-		border: 1px solid #aaa;
+		border: 1px solid #ccc;
 	}
 	
 	ul, 
