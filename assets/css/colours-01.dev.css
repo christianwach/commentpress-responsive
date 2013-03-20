@@ -5,7 +5,7 @@ Fonts
 */
 
 /* Georgia */
-#book_header #tagline,
+#header #tagline,
 body#main_blog div#item-header div#item-meta
 {
 	font-family: Georgia, Times, serif;

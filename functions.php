@@ -203,7 +203,7 @@ if ( ! function_exists( 'commentpress_enqueue_bp_theme_styles' ) ):
 function commentpress_enqueue_bp_theme_styles() {
 
 	// add an action to include bp-overrides when buddypress is active
-	add_action( 'wp_enqueue_scripts', 'commentpress_enqueue_theme_styles', 998 );
+	add_action( 'wp_enqueue_scripts', 'commentpress_enqueue_theme_styles', 997 );
 	
 }
 endif; // commentpress_enqueue_bp_theme_styles
@@ -345,7 +345,7 @@ function commentpress_enqueue_scripts_and_styles() {
 endif; // commentpress_enqueue_scripts_and_styles
 
 // add a filter for the above, very late so it (hopefully) is last in the queue
-add_action( 'wp_enqueue_scripts', 'commentpress_enqueue_scripts_and_styles', 997 );
+add_action( 'wp_enqueue_scripts', 'commentpress_enqueue_scripts_and_styles', 995 );
 
 
 
