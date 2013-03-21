@@ -60,7 +60,7 @@ get_header();
 <?php 
 
 // get avatar
-$_avatar = get_avatar( $my_author->user_email, $size='128' ); 
+$_avatar = get_avatar( $my_author->user_email, $size='200' ); 
 
 // did we get one?
 if ( $_avatar != '' ) {
