@@ -2413,6 +2413,69 @@ p.comment-subscription-form
 
 
 
+/*
+--------------------------------------------------------------------------------
+Compatibility with Query Multiple Taxonomies plugin
+Best used with Simple Taxonomy plugin
+--------------------------------------------------------------------------------
+*/
+
+.qmt-categories
+{
+	font-size: 80%;
+}
+
+.qmt-categories h4
+{
+	margin: 2em 0 0 0;
+	padding: 2%;
+	font-weight: bold;
+	color: #222;
+	background-color: #BDBDBD;
+}
+
+.qmt-categories ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+.qmt-categories ul li
+{
+	list-style: none;
+	list-style-image: none;
+}
+
+.qmt-categories ul li label
+{
+	display: block;
+	font-family: sans-serif;
+	font-weight: normal;
+	padding: 6px 6px;
+	background-color: #ddd;
+	color: #000;
+	text-decoration: none;
+}
+
+.qmt-categories ul li label:hover
+{
+	cursor: pointer;
+	background-color: #eee;
+	color: #000;
+}
+
+.qmt-categories ul ul
+{
+	margin-left: 2em;
+}
+
+
+
+
+
+
+
+
 /* 
 --------------------------------------------------------------------------------
 Comment Orphaning
