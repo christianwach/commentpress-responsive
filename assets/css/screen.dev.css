@@ -635,33 +635,55 @@ BASIC LAYOUT
 {
 	display: block;
 	font-family: sans-serif;
-	height: 60px;
-	padding-top: 40px;
+	height: 92px;
 	color: #fff;
 	text-align: center;
 	font-size: 11px;
 	text-transform: uppercase;
 	text-decoration: none;
+	text-indent: -4000px;
+}
+
+/* define rollover action */
+.page_navigation ul li a:link
+{
+	overflow: hidden !important; /* hides Mozilla outlines */
+	background-position: top left !important;
+}
+
+.page_navigation ul li a:hover,
+.page_navigation ul li a:focus,
+.page_navigation ul li a:active
+{
+	overflow: hidden !important; /* hides Mozilla outlines */
+	background-position: 0 -92px !important;
 }
 
 .page_navigation ul li.alignright a
 {
-	text-align: right;
-	padding-right: 1em;
-	padding-left: 1em;
+	background: transparent url(../images/page_nav/page-curl-top-right.jpg);
 }
 
 .page_navigation ul li.alignleft a
 {
-	text-align: left;
-	padding-right: 1em;
-	padding-left: 1em;
+	background: transparent url(../images/page_nav/page-curl-top-left.jpg);
+}
+
+.page_nav_lower .page_navigation ul li.alignright a
+{
+	background: transparent url(../images/page_nav/page-curl-bottom-right.jpg);
+}
+
+.page_nav_lower .page_navigation ul li.alignleft a
+{
+	background: transparent url(../images/page_nav/page-curl-bottom-left.jpg);
 }
 
 .page_navigation ul li.alignright a:hover,
 .page_navigation ul li.alignleft a:hover
 {
 	color: #ccc;
+	text-indent: -4000px;
 }
 
 #content
@@ -1202,6 +1224,20 @@ div#respond .subscribe_reloaded_insert
 div#respond .subscribe_reloaded_insert p
 {
 	font-size: 80%;
+}
+
+#cpajax_error_msg
+{
+	margin: 0.6em 0;
+	padding: 0.6em;
+	color: #ca0000;
+	background-color: #eee;
+	border: 1px solid #ca0000;
+	font-family: sans-serif;
+	line-height: 1.3em;
+	text-transform: uppercase;
+	font-size: 80%;
+	font-weight: bold;
 }
 
 
