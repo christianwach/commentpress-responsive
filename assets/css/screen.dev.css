@@ -232,7 +232,7 @@ a.skip:visited
 	-khtml-border-radius: 22px;
 	-webkit-border-radius: 22px;
 	border-radius: 22px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 }
 
 a.skip:active, 
@@ -2068,7 +2068,7 @@ Post Versioning
 {
 	display: block;
 	padding: 6px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	font-size: 0.7em;
 	font-weight: normal;
 	display: block;
@@ -2351,14 +2351,14 @@ ol.footnotes,
 .footnotes ol,
 .simple-footnotes ol
 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	font-size: 0.8em;
 	color: #666;
 }
 
 .simple-footnotes
 {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	color: #666;
 }
 
@@ -2375,7 +2375,7 @@ ol.footnotes,
 {
 	color: #761D19;
 	font-weight: bold;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	text-decoration: none;
 }
 
