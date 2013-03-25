@@ -608,7 +608,7 @@ BASIC LAYOUT
 .page_navigation ul li
 {
 	position: absolute;
-	width: 12%;
+	width: 87px;
 }
 
 .page_navigation ul li.alignright
@@ -648,7 +648,8 @@ BASIC LAYOUT
 .page_navigation ul li a:link
 {
 	overflow: hidden !important; /* hides Mozilla outlines */
-	background-position: top left !important;
+	background-position: left top !important;
+	background-repeat: no-repeat;
 }
 
 .page_navigation ul li a:hover,
@@ -656,7 +657,8 @@ BASIC LAYOUT
 .page_navigation ul li a:active
 {
 	overflow: hidden !important; /* hides Mozilla outlines */
-	background-position: 0 -92px !important;
+	background-position: left -92px !important;
+	background-repeat: no-repeat;
 }
 
 .page_navigation ul li.alignright a
