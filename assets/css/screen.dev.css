@@ -661,22 +661,22 @@ BASIC LAYOUT
 
 .page_navigation ul li.alignright a
 {
-	background: transparent url(../images/page_nav/page-curl-top-right.jpg);
+	background: transparent url(../images/nav/page-curl-top-right.jpg);
 }
 
 .page_navigation ul li.alignleft a
 {
-	background: transparent url(../images/page_nav/page-curl-top-left.jpg);
+	background: transparent url(../images/nav/page-curl-top-left.jpg);
 }
 
 .page_nav_lower .page_navigation ul li.alignright a
 {
-	background: transparent url(../images/page_nav/page-curl-bottom-right.jpg);
+	background: transparent url(../images/nav/page-curl-bottom-right.jpg);
 }
 
 .page_nav_lower .page_navigation ul li.alignleft a
 {
-	background: transparent url(../images/page_nav/page-curl-bottom-left.jpg);
+	background: transparent url(../images/nav/page-curl-bottom-left.jpg);
 }
 
 .page_navigation ul li.alignright a:hover,
