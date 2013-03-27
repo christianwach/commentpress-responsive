@@ -27,7 +27,7 @@ http://yuilibrary.com/yui/docs/cssbase/
 html
 {
 	color: #000;
-	background: #fff;
+	background-color: #ccc;
 	font-size: 100%; 
 	overflow-y: scroll; 
 	-webkit-text-size-adjust: 100%; 
@@ -621,6 +621,11 @@ BASIC LAYOUT
 {
 	top: 0;
 	left: 0;
+}
+
+.page_nav_lower
+{
+	z-index: 501;
 }
 
 .page_nav_lower .page_navigation ul li.alignright,
@@ -1440,6 +1445,7 @@ div.search_meta p a
 {
 	position: relative;
 	line-height: 1.6;
+	z-index: 510;
 }
 
 .post span.para_marker 
@@ -1604,16 +1610,16 @@ div.multipager.multipager_all a:hover span.multipager_link
 
 
 
-p.search_meta,
-p.postmetadata 
+.post p.search_meta,
+.post p.postmetadata 
 {
 	font-size: 70%;
 	font-family: sans-serif;
 	color: #666;
 }
 
-p.search_meta a,
-p.postmetadata a
+.post p.search_meta a,
+.post p.postmetadata a
 {
 	color: #000;
 	text-decoration: none; 
