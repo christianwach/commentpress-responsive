@@ -44,7 +44,10 @@ ul#mods-list h5,
 ul#members-list h5,
 span.highlight,
 .item-title a,
-div#message-thread strong a
+div#message-thread strong a,
+.standard-form label, 
+.standard-form span.label,
+form#send-reply div.message-box .avatar-box strong
 {
 	font-family: Lato, 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
@@ -70,7 +73,12 @@ body#main_blog div#item-header div#item-actions h3,
 /* Comment form */
 div#respond h4#respond_title,
 /* BuddyPress Group Email Subscription compatibility */
-h3.activity-subscription-settings-title
+h3.activity-subscription-settings-title,
+/* BuddyPress Messages */
+h3#message-subject,
+table#message-threads tr td.thread-from,
+table#message-threads tr td.thread-info p,
+form#settings-form table.notification-settings th.title
 {
 	font-family: Lato, 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
@@ -127,9 +135,18 @@ ul#admins-list h5,
 ul#mods-list h5,
 ul#members-list h5,
 span.highlight,
-.item-title a
+.item-title a,
+.standard-form label, 
+.standard-form span.label,
+form#send-reply div.message-box .avatar-box strong,
+form#settings-form table.notification-settings th.title
 {
 	text-transform: uppercase;
+}
+
+.standard-form div.radio ul li
+{
+	text-transform: none;
 }
 
 body#main_blog #content div#item-header h2
@@ -163,7 +180,10 @@ div.generic-button a
 }
 
 .post a,
-#item-body a
+#item-body a,
+.standard-form label, 
+.standard-form span.label,
+form#settings-form table.notification-settings th.title
 {
 	color: #761D19;
 }
@@ -198,6 +218,11 @@ div.generic-button a
 {
 	color: #777;
 	text-transform: uppercase;
+}
+
+#account-delete-form #message.info
+{
+	margin: 0 0 15px 0;
 }
 
 
@@ -308,6 +333,11 @@ body.group-home ul.item-list.activity-list > li
     margin-bottom: 1px;
 }
 
+/* messages */
+table#message-threads tr td.thread-options
+{
+	width: 14% !important;
+}
 
 
 
