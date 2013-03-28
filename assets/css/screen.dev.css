@@ -1616,6 +1616,10 @@ div.multipager.multipager_all a:hover span.multipager_link
 	font-size: 80%;
 	font-family: sans-serif;
 	color: #666;
+	margin-top: 1em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	border-top: 1px solid #ddd;
 }
 
 .post p.search_meta a,
@@ -1624,6 +1628,15 @@ div.multipager.multipager_all a:hover span.multipager_link
 	color: #000;
 	text-decoration: none; 
 }
+
+body.search-results .post p.search_meta,
+body.search-results .post p.postmetadata 
+{
+	padding-top: 0;
+	margin-bottom: 0;
+	border-top: none;
+}
+
 
 
 
@@ -2332,11 +2345,11 @@ Compatibility with ZotPress plugin
 --------------------------------------------------------------------------------
 */
 
-div.zp-Zotpress
+#content div.zp-Zotpress
 {
 	margin-top: 1em;
 	padding-top: 1em;
-	border-top: 1px solid #ddd;
+	border-top: none;
 }
 
 .csl-entry
