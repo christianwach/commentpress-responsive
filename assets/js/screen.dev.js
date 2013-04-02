@@ -1922,7 +1922,7 @@ function commentpress_setup_footnotes_compatibility() {
 	// -------------------------------------------------------------------------
 
 	// unbind first to allow repeated calls to this function
-	jQuery('span.footnotereverse a').unbind( 'click' );
+	jQuery('span.footnotereverse a, a.footnote-back-link').unbind( 'click' );
 
 	/** 
 	 * @description: clicking on reverse links in FD-Footnotes and WP_Footnotes

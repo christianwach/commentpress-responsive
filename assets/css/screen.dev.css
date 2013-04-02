@@ -1275,6 +1275,11 @@ div#respond .subscribe_reloaded_insert p
 	padding: 2% 0 0 0;
 }
 
+.post.general_comments #respond_wrapper
+{
+	background-color: #eee;
+}
+
 
 
 
