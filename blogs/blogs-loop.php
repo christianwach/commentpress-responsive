@@ -64,24 +64,29 @@
 	
 	?>
 		<li<?php echo $class; ?>>
-			<div class="item-avatar">
-				<a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_avatar( 'type=thumb' ); ?></a>
-			</div>
 
-			<div class="item">
-				<div class="item-title"><a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_name(); ?></a></div>
-				<div class="item-meta"><span class="activity"><?php bp_blog_last_active(); ?></span></div>
+			<div class="blog-wrapper clearfix">
+			
+				<div class="item-avatar">
+					<a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_avatar( 'type=thumb' ); ?></a>
+				</div>
 
-				<?php do_action( 'bp_directory_blogs_item' ); ?>
-			</div>
+				<div class="item">
+					<div class="item-title"><a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_name(); ?></a></div>
+					<div class="item-meta"><span class="activity"><?php bp_blog_last_active(); ?></span></div>
 
-			<div class="action">
+					<?php do_action( 'bp_directory_blogs_item' ); ?>
+				</div>
 
-				<?php do_action( 'bp_directory_blogs_actions' ); ?>
+				<div class="action">
 
-				<div class="meta">
+					<?php do_action( 'bp_directory_blogs_actions' ); ?>
 
-					<?php bp_blog_latest_post(); ?>
+					<div class="meta">
+
+						<?php bp_blog_latest_post(); ?>
+
+					</div>
 
 				</div>
 

@@ -209,7 +209,7 @@ form#whats-new-form h5
 {
 	color: #fff;
 	font-weight: normal;
-	font-size: 15px;
+	font-size: 14px;
 	text-transform: uppercase;
 	margin: 0;
 	margin-left: 76px;
@@ -519,7 +519,7 @@ ul.item-list li
 {
 	list-style: none;
 	list-style-image: none;
-	border-bottom: 1px solid #EAEAEA;
+	border-bottom: 1px solid #eee;
 	padding: 15px;
 	position: relative;
 	overflow: visible;
@@ -590,23 +590,32 @@ ul.activity-list > li:first-child
 
 div.activity-meta 
 {
-	margin: 12px 0;
+	margin: 12px 0 0 0;
+}
+
+#item-body div.activity-meta a,
+#item-body div.acomment-options a
+{
+	color: #777;
 }
 
 /* activity permalink page */
-body.activity-permalink .activity-list > li:first-child 
+body.activity-permalink .activity-list > li:first-child .activity-wrapper
 {
-    padding-top: 15px;
+	padding: 30px;
+}
+
+body.activity-permalink ul.activity-list li.has-comments 
+{
 }
 
 body.activity-permalink .activity-list li .activity-content
 {
-	border: 0;
+	background-color: #f8f8f8;
 }
 
 body.activity-permalink .activity-list .activity-avatar 
 {
-	padding-bottom: 15px;
 }
 
 body.activity-permalink .activity-list li .activity-header > p 
@@ -647,6 +656,86 @@ ul.item-list .activity-inner ol li
 	overflow: visible;
 	border: none;
 }
+
+ul.item-list li
+{
+}
+
+/* groups, blogs & activities lists */
+ul#groups-list > li,
+ul#blogs-list > li
+{
+	padding: 0;
+    border-left: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul.item-list.activity-list > li
+{
+	padding: 0;
+    border-left: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul#groups-list > li .group-wrapper,
+ul#blogs-list > li .blog-wrapper,
+ul.item-list.activity-list > li .activity-wrapper
+{
+	padding: 15px;
+    border-left: 10px solid #ddd;
+}
+
+ul.item-list.activity-list li.has-comments 
+{
+	padding-bottom: 0;
+}
+
+div.activity-comments ul
+{
+    margin-right: 0;
+}
+
+li.has-comments div.activity-comments
+{
+    margin-top: 15px;
+}
+
+.activity-list .activity-content
+{
+    margin-bottom: 0;
+}
+
+ul.item-list.activity-list li.load-more
+{
+	padding-left: 0;
+    border-left: 0;
+}
+
+ul.item-list.activity-list div.activity-comments li
+{
+	padding-bottom: 1px;
+}
+
+div.activity-comments li form.ac-form 
+{
+	margin-right: 0;
+}
+
+/* remove decoration on group pages */
+body.group-home ul.item-list.activity-list > li
+{
+    border-left: none;
+}
+
+/* messages */
+table#message-threads tr td.thread-options
+{
+	width: 14% !important;
+}
+
+
 
 
 
@@ -1311,6 +1400,18 @@ body.friends #members-list li
 	padding: 15px;
 }
 
+ul#members-list.item-list li div.item-title, 
+ul#members-list.item-list li div.item-meta
+{
+	width: auto;
+}
+
+ul#members-list.item-list li div.item-title span.activity-read-more a
+{
+	font-size: 12px;
+}
+
+
 
 
 /* Invite Anyone plugin compatibility */
@@ -1445,6 +1546,7 @@ div.activity-comments ul
 {
 	margin-top: 0;
 	margin-bottom: 0;
+	margin-left: 0;
 }
 
 .standard-form div.radio ul li 
@@ -1533,7 +1635,7 @@ span.user-nicename {
 
 ul.item-list.activity-list li 
 {
-	padding-bottom: 1px;
+	padding-bottom: 0;
 	clear: left;
 }
 
@@ -1574,6 +1676,8 @@ div.activity-comments div.acomment-meta
 
 div.activity-comments form.root
 {
+	margin-top: 15px;
+	margin-bottom: 1px;
 	clear: left;
 }
 

@@ -180,15 +180,22 @@ function commentpress_enqueue_theme_styles() {
 
 	(a) see commentpress_enqueue_scripts_and_styles() for dequeuing bp-legacy-css
 	
-	(b) BP 1.6 requires the inclusion and setup of the BuddyPress Template Pack plugin
-	    BP 1.7, however, will add its legacy javascript for us - nice!
-	    
-	what should be done at some point, then, is to refactor the buddypress files
-	in this theme and include them depending on the version of buddypress that is
-	detected. this would allow us to keep up with later stylistic developments
-	that we're ignoring at present.
+	(b) CommentPress Core and themes based on it require the inclusion and setup
+	    of the BuddyPress Template Pack plugin, which should have only Javascript
+	    enabled for the main BuddyPress site
 	
 	----------------------------------------------------------------------------
+	*/
+	
+	/*
+	// enqueue a copy of the legacy buddypress js
+	wp_enqueue_script(
+	
+		'cp_buddypress_js', 
+		get_template_directory_uri() . '/assets/js/buddypress.js', 
+		array( 'cp_common_js' )
+	
+	);
 	*/
 	
 }

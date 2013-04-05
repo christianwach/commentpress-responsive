@@ -1171,6 +1171,23 @@ p#respond_button
 	float: right;
 }
 
+/*
+We could position so that there's a bigger touch area:
+.cancel-comment-reply
+{
+	position: relative;
+}
+
+#cancel-comment-reply-link
+{
+	position: absolute;
+	width: 100%;
+	display: block;
+	text-align: right;
+	padding: 3px 0;
+}
+*/
+
 .comment-wrapper
 {
 	background-color: transparent;
