@@ -2934,6 +2934,8 @@ RESPONSIVENESS
 	#title h1 
 	{
 		margin: 0.8em 0 0 0;
+		font-size: 110%;
+		line-height: 1.8;
 	}
 	
 	#switcher ul li a
