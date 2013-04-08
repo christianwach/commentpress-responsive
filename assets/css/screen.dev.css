@@ -481,7 +481,7 @@ img.cp_logo_image
 	position: relative;
 	width: 54%;
 	z-index: 500;
-	background-color: #ddd;
+	background-color: #ccc;
 }
 
 #sidebar
@@ -643,7 +643,7 @@ BASIC LAYOUT
 	height: 92px;
 	color: #fff;
 	text-align: center;
-	font-size: 11px;
+	font-size: 1em;
 	text-transform: uppercase;
 	text-decoration: none;
 	text-indent: -4000px;
@@ -2705,6 +2705,15 @@ RESPONSIVENESS
 		font-size: 120%;
 	}
 	
+	/* buddypress content */
+	.activity,
+	#groups-dir-list,
+	#members-dir-list,
+	#blogs-dir-list
+	{
+		font-size: 110%;
+	}
+	
 	button,
 	a.button,
 	input[type=submit],
@@ -2843,6 +2852,15 @@ RESPONSIVENESS
 		font-size: 120%;
 	}
 	
+	/* buddypress content */
+	.activity,
+	#groups-dir-list,
+	#members-dir-list,
+	#blogs-dir-list
+	{
+		font-size: 110%;
+	}
+	
 }
 
 
@@ -2893,6 +2911,15 @@ RESPONSIVENESS
 	.comment-content
 	{
 		font-size: 80%;
+	}
+	
+	/* buddypress content */
+	.activity,
+	#groups-dir-list,
+	#members-dir-list,
+	#blogs-dir-list
+	{
+		font-size: 90%;
 	}
 	
 	/* box-shadow counts as layout on Android, so remove

@@ -244,8 +244,7 @@ BuddyPress Main Site
 */
 
 /* Darkest Colour for header */
-#header,
-#footer
+#header
 {
     background: #2c2622;
 }
