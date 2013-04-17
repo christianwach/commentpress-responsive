@@ -2,6 +2,29 @@
 /*
 Template Name: Welcome
 */
+
+
+
+global $post;
+
+// "Title Page" always points to the first readable page, unless it is itself
+$next_page_id = $commentpress_core->nav->get_first_page();
+$title = get_the_title( $next_page_id );
+
+// init
+$next_page_html = '';
+
+// test if the link points to this page
+if ( $next_page_id != $post->ID ) {
+
+	// set the link
+	$next_page_html = '<a href="'.get_permalink( $next_page_id ).'" id="next_page" class="css_btn" title="'.$title.'">'.
+							$title.
+					  '</a>';
+}
+
+
+
 ?>
 
 <?php get_header(); ?>
@@ -22,26 +45,22 @@ Template Name: Welcome
 
 
 
-<div class="page_navigation">
+<?php if ( $next_page_html != '' ) { ?>
+	<div class="page_navigation">
 
-<ul>
-<li class="alignright">
+	<ul>
+	<li class="alignright">
 
-<?php
+	<?php
 
-// "Title Page" always points to the first readable page
-$next_page_id = $commentpress_core->nav->get_first_page();
-$title = get_the_title( $next_page_id );
+	echo $next_page_html;
 
-$next_page_html = '<a href="'.get_permalink( $next_page_id ).'" id="next_page" class="css_btn" title="'.$title.'">'.$title.'</a>';
+	?>
+	</li>
+	</ul>
 
-echo $next_page_html;
-
-?>
-</li>
-</ul>
-
-</div><!-- /page_navigation -->
+	</div><!-- /page_navigation -->
+<?php } ?>
 
 
 
@@ -133,6 +152,7 @@ echo $next_page_html;
 
 
 
+<?php if ( $next_page_html != '' ) { ?>
 <div class="page_nav_lower">
 
 <div class="page_navigation">
@@ -144,6 +164,7 @@ echo $next_page_html;
 </div><!-- /page_navigation -->
 
 </div><!-- /page_nav_lower -->
+<?php } ?>
 
 
 
