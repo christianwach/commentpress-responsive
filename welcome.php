@@ -22,6 +22,29 @@ Template Name: Welcome
 
 
 
+<div class="page_navigation">
+
+<ul>
+<li class="alignright">
+
+<?php
+
+// "Title Page" always points to the first readable page
+$next_page_id = $commentpress_core->nav->get_first_page();
+$title = get_the_title( $next_page_id );
+
+$next_page_html = '<a href="'.get_permalink( $next_page_id ).'" id="next_page" class="css_btn" title="'.$title.'">'.$title.'</a>';
+
+echo $next_page_html;
+
+?>
+</li>
+</ul>
+
+</div><!-- /page_navigation -->
+
+
+
 <div id="content">
 
 
@@ -39,14 +62,14 @@ Template Name: Welcome
 	// if we've elected to show the title...
 	if ( commentpress_get_post_title_visibility( get_the_ID() ) ) {
 
-	?><h2 class="post_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-	
+	?>
+	<h2 class="post_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 	<?php
 	
 	}
-	
-	?>
 
+	?>
+	
 
 
 	<?php
@@ -107,6 +130,20 @@ Template Name: Welcome
 
 
 </div><!-- /content -->
+
+
+
+<div class="page_nav_lower">
+
+<div class="page_navigation">
+
+<ul>
+<li class="alignright"><?php echo $next_page_html; ?></li>
+</ul>
+
+</div><!-- /page_navigation -->
+
+</div><!-- /page_nav_lower -->
 
 
 
