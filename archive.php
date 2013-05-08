@@ -16,6 +16,21 @@
 
 
 
+<?php
+
+// until WordPress supports a locate_theme_file() function, use filter
+$page_navigation = apply_filters( 
+	'cp_template_page_navigation',
+	get_template_directory() . '/assets/templates/page_navigation.php'
+);
+
+// always include
+include( $page_navigation );
+
+?>
+
+
+
 <div id="content" class="clearfix">
 
 <div class="post">
@@ -87,6 +102,17 @@
 </div><!-- /post -->
 
 </div><!-- /content -->
+
+
+
+<div class="page_nav_lower">
+<?php
+
+// include page_navigation again
+include( $page_navigation );
+
+?>
+</div><!-- /page_nav_lower -->
 
 
 

@@ -14,6 +14,8 @@ global $commentpress_core;
 $previous_title = apply_filters( 'cp_nav_previous_link_title', __( 'Older Entries', 'commentpress-theme' ) );
 $next_title = apply_filters( 'cp_nav_next_link_title', __( 'Newer Entries', 'commentpress-theme' ) );
 
+
+
 // is it a page?
 if ( is_page() ) {
 
@@ -45,6 +47,7 @@ elseif ( is_single() ) {
 	<?php
 
 }
+
 
 
 // is this the blog home?
@@ -93,6 +96,28 @@ elseif ( is_day() || is_month() || is_year() ) {
 
 // search?
 elseif ( is_search() ) {
+
+	$nl = get_next_posts_link( __( 'More Results', 'commentpress-theme' ) );
+	$pl = get_previous_posts_link( __( 'Previous Results', 'commentpress-theme' ) );
+	
+	// did we get either?
+	if ( $nl != '' OR $pl != '' ) { ?>
+	
+	<ul class="blog_navigation">
+		<?php if ( $nl != '' ) { ?><li class="alignright"><?php echo $nl; ?></li><?php } ?>
+		<?php if ( $pl != '' ) { ?><li class="alignleft"><?php echo $pl; ?></li><?php } ?>
+	</ul>
+	
+	<?php } ?>
+	
+	<?php
+
+}
+
+
+
+// category archives, including qmt
+elseif ( is_category() ) {
 
 	$nl = get_next_posts_link( __( 'More Results', 'commentpress-theme' ) );
 	$pl = get_previous_posts_link( __( 'Previous Results', 'commentpress-theme' ) );
