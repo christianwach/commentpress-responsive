@@ -157,8 +157,8 @@ elseif ( is_search() ) {
 
 <div id="switcher">
 	<ul>
-		<li class="navigation-item"><a class="navigation-button" href="#navigation">Contents</a></li>			
-		<li class="content-item"><a class="content-button" href="#content">Page</a></li>			
+		<li class="navigation-item"><a class="navigation-button" href="#navigation">Navigate</a></li>			
+		<li class="content-item"><a class="content-button" href="#content">Content</a></li>			
 		<li class="sidebar-item"><a class="sidebar-button" href="#sidebar">Discuss</a></li>
 	</ul>
 </div>
