@@ -138,6 +138,28 @@ elseif ( is_category() ) {
 
 
 
+// tag archives
+elseif ( is_tag() ) {
+
+	$nl = get_next_posts_link( __( 'More Results', 'commentpress-theme' ) );
+	$pl = get_previous_posts_link( __( 'Previous Results', 'commentpress-theme' ) );
+	
+	// did we get either?
+	if ( $nl != '' OR $pl != '' ) { ?>
+	
+	<ul class="blog_navigation">
+		<?php if ( $nl != '' ) { ?><li class="alignright"><?php echo $nl; ?></li><?php } ?>
+		<?php if ( $pl != '' ) { ?><li class="alignleft"><?php echo $pl; ?></li><?php } ?>
+	</ul>
+	
+	<?php } ?>
+	
+	<?php
+
+}
+
+
+
 ?>
 
 </div><!-- /page_navigation -->
