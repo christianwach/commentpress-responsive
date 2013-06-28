@@ -198,7 +198,8 @@ form#settings-form table.notification-settings th.title
 .comment-meta a, 
 .acomment-meta a,
 .meta a,
-#groups-list .group-subscription-div a
+#groups-list .group-subscription-div a,
+body.create-blog #content a
 {
 	color: #761D19;
 	text-decoration: underline;
