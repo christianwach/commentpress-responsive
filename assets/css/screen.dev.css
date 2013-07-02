@@ -1099,7 +1099,7 @@ p.comment_activity_date
 
 ol.children
 {
-	margin: 0 0 0 2em;
+	margin: 0 0 0 1.5em;
 	padding: 0;
 }
 
@@ -2360,7 +2360,6 @@ html>/**/body #tern_members .tern_wp_members_list li
 
 
 
-
 /*
 --------------------------------------------------------------------------------
 Compatibility with ZotPress plugin
@@ -2379,6 +2378,9 @@ Compatibility with ZotPress plugin
 	line-height: 1.6;
 	font-size: 80%;
 }
+
+
+
 
 
 
@@ -2549,6 +2551,32 @@ Best used with Simple Taxonomy plugin
 }
 
 
+
+
+
+/*
+--------------------------------------------------------------------------------
+Compatibility with BP Group Sites plugin
+--------------------------------------------------------------------------------
+*/
+
+#bpgsites-post-in-box
+{
+	margin: 0.4em;
+}
+
+#bpgsites-post-in-box span,
+.bpgsites_comment_group_label
+{
+	font-size: 70%;
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+
+#bpgsites-post-in-box select
+{
+	font-size: 70%;
+}
 
 
 
