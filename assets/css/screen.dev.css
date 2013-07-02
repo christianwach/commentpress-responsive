@@ -2885,13 +2885,6 @@ RESPONSIVENESS
 		left: -50%;
 	}
 	
-	h3.activity_heading,
-	.comments_container > h3
-	{
-		font-size: 1em;
-		padding: 15px 10px;
-	}
-	
 	#toc_sidebar .sidebar_minimiser ul li a 
 	{
 		font-size: 1em;
