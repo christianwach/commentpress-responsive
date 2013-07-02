@@ -36,7 +36,7 @@ NOTES
 
 
 
-	<h3><?php 
+	<h3 class="general_comments_header"><?php 
 	
 	comments_number(
 		'<span>0</span> general comments', 
@@ -45,9 +45,13 @@ NOTES
 	); 
 	
 	?></h3>
-
-
-
+	
+	
+	
+	<?php do_action( 'commentpress_before_scrollable_comments' ); ?>
+	
+	
+	
 	<div class="paragraph_wrapper">
 
 		<ol class="commentlist">

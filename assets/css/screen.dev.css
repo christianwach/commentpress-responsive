@@ -1289,19 +1289,25 @@ div#respond .subscribe_reloaded_insert p
 
 
 /* general comments */
-#comments_in_page_wrapper .comments_container > h3
+#comments_in_page_wrapper .comments_container > h3.general_comments_header
 {
 	padding: 6px;
 	color: #222;
 }
 
+#comments_in_page_wrapper .comments_container > h3.general_comments_header:hover
+{
+	background-color: #BDBDBD;
+}
+
 /* general comments title number */
-#comments_in_page_wrapper .comments_container > h3 > span
+#comments_in_page_wrapper .comments_container > h3.general_comments_header > span
 {
 	display: inline;
 	padding: 0;
 }
 
+/*
 #comments_in_page_wrapper ol.commentlist li.comment
 {
 	padding: 2%;
@@ -1311,6 +1317,7 @@ div#respond .subscribe_reloaded_insert p
 {
 	padding: 2% 0 0 0;
 }
+*/
 
 .post.general_comments #respond_wrapper
 {
@@ -2595,6 +2602,22 @@ Compatibility with BP Group Sites plugin
 #bpgsites-post-in-box select
 {
 	font-size: 70%;
+}
+
+#comments_in_page_wrapper .comments_container h3.bpgsites_group_filter_heading
+{
+	padding: 0;
+	background-color: #d6d6d6;
+}
+
+#comments_in_page_wrapper .comments_container h3.bpgsites_group_filter_heading:hover
+{
+	background-color: #ccc;
+}
+
+#comments_in_page_wrapper .comments_container #bpgsites_group_filter
+{
+	background-color: #dfdfdf;
 }
 
 @media all and (max-width: 1200px) {
