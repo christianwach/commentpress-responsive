@@ -58,8 +58,16 @@ caption, th { text-align: left; }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
 q:before, q:after { content: ''; }
 abbr, acronym { border: 0; font-variant: normal; }
-sup { vertical-align: text-bottom; }
-sub { vertical-align: text-top; }
+/* "sub, sup" from https://gist.github.com/unruthless/413930 */
+sub, sup 
+{
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
 input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; }
 input, textarea, select { *font-size: 100%; }
 legend { color: #000; }
@@ -139,13 +147,14 @@ th {
 }
 caption {
 	/*coordinated margin to match cell's padding*/
-	margin-bottom: .5em;
+	margin-bottom: 0.5em;
 	/*centered so it doesn't blend in to other content*/
 	text-align: center;
 }
 p, fieldset, table, pre, address {
 	/*so things don't run into each other*/
-	margin-bottom: 1em;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
 }
 address, caption, cite, dfn, em, th, var, q
 {
@@ -962,12 +971,14 @@ ol.comment_activity
 	background-color: #eee;
 }
 
+/*
 ol.commentlist,
 .page_comments_output ol.comment_activity,
 .all_comments_output ol.comment_activity
 {
 	padding-bottom: 2%;
 }
+*/
 
 ol.commentlist li,
 ol.comment_activity li
@@ -977,11 +988,20 @@ ol.comment_activity li
 	padding: 0;
 }
 
+/*
 ol.commentlist li.comment,
 ol.comment_activity li
 {
 	background-color: #eee;
 	padding: 2% 2% 0;
+}
+*/
+
+ol.commentlist li.comment,
+ol.comment_activity li
+{
+	background-color: #eee;
+	padding: 0;
 }
 
 .comment-identifier
@@ -1046,7 +1066,7 @@ p.comment_activity_date
 .comment-content
 {
 	background-color: #fff;
-	padding: 5% 5% 1% 5%;
+	padding: 1% 2% 1% 4%;
 	margin: 1% 2% 0 2%;
 	-moz-border-radius: 20px;
 	-khtml-border-radius: 20px;
@@ -1106,7 +1126,7 @@ ol.children
 ol.children li.comment
 {
 	background-color: #eee;
-	padding: 1% 0;
+	padding: 0;
 }
 
 /*
@@ -1405,12 +1425,6 @@ div.search_meta
 	margin-bottom: 1.6em;
 }
 
-div.search_meta
-{
-	margin-top: -2em;
-	margin-bottom: 1.6em;
-}
-
 .search_result
 {
 	margin: 2em 0;
@@ -1449,6 +1463,11 @@ div.search_meta cite a
 {
 	color: #000;
 	text-decoration: none;
+}
+
+div.search_meta p
+{
+	margin: 0;
 }
 
 div.search_meta p a
@@ -2743,6 +2762,11 @@ RESPONSIVENESS
 	.comments_container > h3 a
 	{
 		padding: 15px 10px;
+	}
+	
+	.comments_container > h3.nocomments > span
+	{
+		padding: 0;
 	}
 	
 	#toc_sidebar .sidebar_minimiser ul li a 
