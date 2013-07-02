@@ -2643,7 +2643,7 @@ Comment Orphaning
 	cursor: move;
 }
 
-.comment-orphan
+.comment-content.comment-orphan
 {
 	background-color: #F5B0A6 !important;
 }

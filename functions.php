@@ -3302,7 +3302,7 @@ function commentpress_get_comment_markup( $comment, $args, $depth ) {
 
 
 
-<div class="comment-content">
+<div class="comment-content'.$_comment_orphan.'">
 '.apply_filters('comment_text', $comment_text ).'
 </div><!-- /comment-content -->
 
