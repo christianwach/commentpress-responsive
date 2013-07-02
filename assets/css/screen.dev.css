@@ -2578,6 +2578,20 @@ Compatibility with BP Group Sites plugin
 	font-size: 70%;
 }
 
+@media all and (max-width: 1200px) {
+
+	.bpgsites_comment_group
+	{
+		padding: 5px;
+	}
+
+	.bpgsites_comment_group_label
+	{
+		padding: 5px;
+		font-size: 100%;
+	}
+
+}
 
 
 
@@ -2714,10 +2728,20 @@ RESPONSIVENESS
 	}
 	
 	h3.activity_heading,
-	h3.nocomments,
+	h3.nocomments
+	{
+		font-size: 1em;
+		padding: 15px 10px;
+	}
+	
 	.comments_container > h3
 	{
 		font-size: 1em;
+	}
+	
+	.comments_container > h3 > span, 
+	.comments_container > h3 a
+	{
 		padding: 15px 10px;
 	}
 	
