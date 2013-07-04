@@ -1173,6 +1173,16 @@ ol.children .reply a
 	padding: 2%;
 }
 
+div#respond > p
+{
+	font-size: 70%;
+	text-transform: uppercase;
+	font-family: sans-serif;
+}
+
+#cpajax_error_msg
+
+
 #author_details,
 #comment_details
 {
@@ -1301,7 +1311,8 @@ div#respond .subscribe_reloaded_insert p
 
 
 /* general comments */
-#comments_in_page_wrapper .comments_container > h3.general_comments_header
+#comments_in_page_wrapper .comments_container > h3.general_comments_header,
+#comments_in_page_wrapper .comments_container > h3.nocomments
 {
 	padding: 6px;
 	color: #222;
