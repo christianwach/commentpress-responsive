@@ -49,19 +49,11 @@ global $post;
 
 <h4 id="respond_title"><?php commentpress_comment_form_title( 'Leave a Comment', 'Leave a Reply to %s' ); ?></h4>
 
-<?php 
-
-if ( get_option('comment_registration') && !$user_ID ) { 
-	
-	?>
+<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 
 	<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 
-	<?php 
-
-} else { 
-
-	?>
+<?php else : ?>
 
 	<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="commentform">
 	
@@ -140,11 +132,7 @@ if ( get_option('comment_registration') && !$user_ID ) {
 
 	</form>
 
-	<?php 
-
-} // if registration required and not logged in 
-
-?>
+<?php endif; // If registration required and not logged in ?>
 
 
 
