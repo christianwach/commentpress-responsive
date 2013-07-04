@@ -3048,9 +3048,8 @@ if ( ! function_exists( 'commentpress_comment_reply_link' ) ):
  *
  */
 function commentpress_comment_reply_link( $args = array(), $comment = null, $post = null ) {
-
-	global $user_ID;
-
+	
+	// set some defaults
 	$defaults = array(
 	
 		'add_below' => 'comment', 
@@ -3062,26 +3061,31 @@ function commentpress_comment_reply_link( $args = array(), $comment = null, $pos
 		'after' => ''
 		
 	);
-
+	
+	// parse them
 	$args = wp_parse_args($args, $defaults);
 
 	if ( 0 == $args['depth'] || $args['max_depth'] <= $args['depth'] ) {
 		return;
 	}
-
+	
+	// convert to vars
 	extract($args, EXTR_SKIP);
-
+	
+	// get the obvious
 	$comment = get_comment($comment);
 	$post = get_post($post);
 
 	// kick out if comments closed
 	if ( 'open' != $post->comment_status ) { return false; }
-
+	
+	// init link
 	$link = '';
 	
 	// if we have to log in to comment...
-	if ( get_option('comment_registration') AND !$user_ID ) {
-	
+	if ( get_option('comment_registration') AND !is_user_logged_in() ) {
+		
+		// construct link
 		$link = '<a rel="nofollow" href="' . site_url('wp-login.php?redirect_to=' . get_permalink()) . '">' . $login_text . '</a>';
 		
 	} else {
