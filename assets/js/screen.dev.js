@@ -2392,6 +2392,39 @@ jQuery(document).ready( function($) {
 
 
 
+	/** 
+	 * @description: Special Pages menu headings click
+	 *
+	 */
+	$("#toc_sidebar .sidebar_contents_wrapper ul#nav li a").click( function( event ) {
+	
+		// define vars
+		var myArr;
+	
+		// no, find child lists of the enclosing <li>
+		myArr = $(this).parent().find('ul');
+		
+		// do we have a child list?
+		if( myArr.length > 0 ) {
+		
+			// toggle next list
+			$(this).next('ul').slideToggle();
+		
+			// override event
+			event.preventDefault();
+		
+			// --<
+			return false;
+			
+		}
+	
+	});
+
+
+
+
+
+
 	// hide workflow content
 	$('#literal .post').css( 'display', 'none' );
 	$('#original .post').css( 'display', 'none' );
