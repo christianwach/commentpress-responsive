@@ -1008,6 +1008,11 @@ ol.comment_activity li
 }
 */
 
+.flash-comment
+{
+	background-color: #f00;
+}
+
 ol.commentlist li.comment,
 ol.comment_activity li
 {

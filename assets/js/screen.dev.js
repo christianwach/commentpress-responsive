@@ -395,6 +395,8 @@ function commentpress_scroll_to_top( target, speed ) {
  */
 function cp_flash_comment_header( comment ) {
 
+	//jQuery( '#li-comment-' + target.prop( 'id' ).split( '-' )[1] ).removeClass( 'flash-comment' );
+
 	return;
 	
 	/*
@@ -456,7 +458,12 @@ function cp_scroll_comments( target, speed, flash ) {
 	
 		// either flash at the end or not..
 		if ( flash == 'flash' ) {
+			
+			//console.log( target.prop( 'id' ).split( '-' )[1] );
 		
+			// add highlight class
+			//jQuery( '#li-comment-' + target.prop( 'id' ).split( '-' )[1] ).addClass( 'flash-comment' );
+			
 			// scroll to new comment
 			jQuery('#comments_sidebar .sidebar_contents_wrapper').scrollTo(
 				target, 
@@ -1029,6 +1036,11 @@ function cp_enable_context_clicks() {
 				// scroll page to it
 				commentpress_scroll_page_to_textblock( text_sig );
 				
+				//console.log( '#li-comment-' + comment_id );
+				
+				// add highlight class
+				//jQuery( '#li-comment-' + comment_id ).addClass( 'flash-comment' );
+				
 				// scroll to new comment
 				jQuery('#comments_sidebar .sidebar_contents_wrapper').scrollTo(
 					comment, 
@@ -1301,7 +1313,7 @@ function cp_scroll_to_anchor_on_load() {
 function cp_scroll_to_comment_on_load() {
 
 	// define vars
-	var url, comment_id;
+	var url, comment_id, comment;
 
 	// if there is an anchor in the URL...
 	url = document.location.toString();
@@ -1311,35 +1323,43 @@ function cp_scroll_to_comment_on_load() {
 	
 		// get comment ID
 		comment_id = url.split('#comment-')[1];
+		
+		// get comment in DOM
+		comment = jQuery( '#comment-' + comment_id );
+		
+		// did we get one?
+		if ( comment ) {
 
-		// if IE6, then we have to scroll #wrapper
-		if ( msie6 ) {
+			// if IE6, then we have to scroll #wrapper
+			if ( msie6 ) {
 		
-			// scroll to new comment
-			jQuery('#main_wrapper').scrollTo(
-				jQuery('#comment-'+comment_id), 
-				{
-					duration: cp_scroll_speed, 
-					axis:'y', 
-					offset: commentpress_get_header_offset()
-				}
-			);
-			
-		} else {
-		
-			// only scroll if not mobile (but allow tablets)
-			if ( cp_is_mobile == '0' || cp_is_tablet == '1' ) {
-			
 				// scroll to new comment
-				jQuery.scrollTo(
-					jQuery('#comment-'+comment_id), 
+				jQuery('#main_wrapper').scrollTo(
+					comment, 
 					{
 						duration: cp_scroll_speed, 
 						axis:'y', 
 						offset: commentpress_get_header_offset()
 					}
 				);
+			
+			} else {
+		
+				// only scroll if not mobile (but allow tablets)
+				if ( cp_is_mobile == '0' || cp_is_tablet == '1' ) {
+			
+					// scroll to new comment
+					jQuery.scrollTo(
+						comment, 
+						{
+							duration: cp_scroll_speed, 
+							axis:'y', 
+							offset: commentpress_get_header_offset()
+						}
+					);
 				
+				}
+			
 			}
 			
 		}
