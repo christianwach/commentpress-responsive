@@ -1739,12 +1739,6 @@ table.profile-fields td.label
 	vertical-align: middle;
 }
 
-#activity_sidebar .workshop_comments_output .comment-wrapper,
-#activity_sidebar li.groups
-{
-	padding-bottom: 6px;
-}
-
 #activity_sidebar .workshop_comments_output .comment-content
 {
 	border-bottom: none;
