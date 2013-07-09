@@ -1,7 +1,7 @@
 Commentpress Responsive Theme
 =============================
 
-An alternative base theme for the *CommentPress Core* plugin that responds more elegantly to screen size and refines the *CommentPress* experience for desktop, tablet and mobile browsers alike.
+An alternative, next-generation base theme for the *CommentPress Core* plugin that responds more elegantly to screen size and refines the *CommentPress* experience for desktop, tablet and mobile browsers alike.
 
 This theme will be bundled with *CommentPress Core* at some stage and is now the recommended theme for *CommentPress Core* in any *WordPress* and *BuddyPress* scenario.
 
