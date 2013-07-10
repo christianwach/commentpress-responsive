@@ -1,15 +1,18 @@
-/* BUDDYPRESS */
+/*
+================================================================================
+CommentPress Responsive BuddyPress Overrides Stylesheet
+================================================================================
+AUTHOR: Christian Wach <needle@haystack.co.uk>
+--------------------------------------------------------------------------------
+NOTES
 
-
-
+--------------------------------------------------------------------------------
+*/
 
 
 
 /* Import BP Template Pack CSS - this is copied from BP Template Pack Plugin and overriden below */
 @import url("bp.css");
-
-
-
 
 
 

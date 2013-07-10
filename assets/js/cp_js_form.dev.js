@@ -1,6 +1,6 @@
 /*
 ================================================================================
-CommentPress Core addComment Javascript
+CommentPress Responsive addComment Javascript
 ================================================================================
 AUTHOR: Christian Wach <needle@haystack.co.uk>
 --------------------------------------------------------------------------------
