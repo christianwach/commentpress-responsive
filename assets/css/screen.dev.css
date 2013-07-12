@@ -397,6 +397,11 @@ SCREEN STYLES
 	z-index: 1000;
 }
 
+body.admin-bar #header
+{
+	top: 28px;
+}
+
 img.cp_logo_image
 {
 	float: left;
@@ -495,6 +500,11 @@ img.cp_logo_image
 	background-color: #ddd;
 }
 
+body.admin-bar #navigation
+{
+	top: 98px;
+}
+
 #wrapper
 {
 	float: left;
@@ -513,6 +523,11 @@ img.cp_logo_image
 	right: 0;
 	z-index: 499;
 	background-color: #ddd;
+}
+
+body.admin-bar #sidebar
+{
+	top: 98px;
 }
 
 
@@ -2620,11 +2635,29 @@ Compatibility with BP Group Sites plugin
 }
 
 #bpgsites-post-in-box span,
+.bpgsites_comment_group
+{
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+
+.bpgsites_comment_group_mine,
+.bpgsites_comment_group_public
+{
+	font-size: 70%;
+	font-weight: bold;
+	padding: 10px 0 5px 0;
+}
+
+.bpgsites_comment_group_mine
+{
+	padding-top: 0;
+}
+
+#bpgsites-post-in-box span,
 .bpgsites_comment_group_label
 {
 	font-size: 70%;
-	font-family: sans-serif;
-	text-transform: uppercase;
 }
 
 #bpgsites-post-in-box select
