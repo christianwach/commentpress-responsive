@@ -1290,7 +1290,7 @@ function cp_scroll_to_anchor_on_load() {
 		if ( anchor ) {
 		
 			// add class
-			anchor.addClass( 'selected_para' );
+			//anchor.addClass( 'selected_para' );
 			
 			// scroll page
 			commentpress_scroll_page( anchor );
