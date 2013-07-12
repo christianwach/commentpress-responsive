@@ -2597,6 +2597,19 @@ function commentpress_get_comments_by_para() {
 	// if we have any...
 	if ( count( $comments_sorted ) > 0 ) {
 	
+		// construct redirect link
+		$redirect = site_url( 'wp-login.php?redirect_to='.get_permalink() );
+		
+		// init allowed to comment
+		$allowed_to_comment = false;
+		
+		// test current state
+		if ( get_option('comment_registration') AND !is_user_logged_in() ) {
+			$allowed_to_comment = true;
+		}
+		
+		
+		
 		// default comment type to get
 		$comment_type = 'all';
 
@@ -2827,7 +2840,8 @@ function commentpress_get_comments_by_para() {
 				// have we already used this text signature?
 				if( in_array( $text_sig, $used_text_sigs ) ) {
 				
-					// show some kind of message TO DO: incorporate para order too
+					// show some kind of message
+					// should not be necessary now that we ensure unique text sigs
 					echo '<div class="reply_to_para" id="reply_to_para-'.$para_num.'">'."\n".
 							'<p>'.
 								__( 'It appears that this paragraph is a duplicate of a previous one.', 'commentpress-theme' ).
@@ -2856,36 +2870,61 @@ function commentpress_get_comments_by_para() {
 					// only add comment-on-para link if comments are open and it's not the pingback section
 					if ( 'open' == $post->comment_status AND $text_signature != 'PINGS_AND_TRACKS' ) {
 					
-						// construct onclick 
-						$onclick = "return addComment.moveFormToPara( '$para_num', '$text_sig', '$post->ID' )";
-						
-						// just show replytopara
-						$query = remove_query_arg( array( 'replytocom' ) ); 
-			
-						// add param to querystring
-						$query = esc_html( 
-							add_query_arg( 
-								array( 'replytopara' => $para_num ),
-								$query
-							) 
-						);
-						
 						// if we have to log in to comment...
-						if ( get_option('comment_registration') AND !is_user_logged_in() ) {
-							
+						if ( $allowed_to_comment ) {
+						
 							// leave comment link
 							echo '<div class="reply_to_para" id="reply_to_para-'.$para_num.'">'."\n".
-									'<p><a class="reply_to_para" rel="nofollow" href="' . site_url('wp-login.php?redirect_to=' . get_permalink()) . '">'.
+									'<p><a class="reply_to_para" rel="nofollow" href="'.$redirect.'">'.
 										__( 'Login to leave a comment on ', 'commentpress-theme' ).$paragraph_text.
 									'</a></p>'."\n".
 								 '</div>'."\n\n";
 							
 						} else {
+						
+							// construct onclick content
+							$onclick = "return addComment.moveFormToPara( '$para_num', '$text_sig', '$post->ID' )";
+							
+							// construct onclick attribute
+							$onclick = apply_filters( 
+								'commentpress_reply_to_para_link_onclick',
+								' onclick="'.$onclick.'"'
+							);
+						
+							// just show replytopara
+							$query = remove_query_arg( array( 'replytocom' ) ); 
+			
+							// add param to querystring
+							$query = esc_attr( 
+								add_query_arg( 
+									array( 'replytopara' => $para_num ),
+									$query
+								)
+							);
+							
+							// construct href attribute
+							$href = apply_filters( 
+								'commentpress_reply_to_para_link_href',
+								$query.'#respond' // add respond ID
+							);
+						
+							// construct link content
+							$link_content = sprintf(
+								__( 'Leave a comment on %s', 'commentpress-theme' ),
+								$paragraph_text
+							);
+						
+							// allow overrides
+							$link_content = apply_filters( 
+								'commentpress_reply_to_para_link_text',
+								$link_content,
+								$paragraph_text
+							);
 							
 							// leave comment link
 							echo '<div class="reply_to_para" id="reply_to_para-'.$para_num.'">'."\n".
-									'<p><a class="reply_to_para" href="'.$query.'#respond" onclick="'.$onclick.'">'.
-										__( 'Leave a comment on ', 'commentpress-theme' ).$paragraph_text.
+									'<p><a class="reply_to_para" href="'.$href.'"'.$onclick.'>'.
+										$link_content.
 									'</a></p>'."\n".
 								 '</div>'."\n\n";
 							
