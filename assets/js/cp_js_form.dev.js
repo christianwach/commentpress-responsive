@@ -483,7 +483,13 @@ addComment = {
 					if ( comment_list[0] && cp_promote_reading == '0' ) {
 						jQuery( '#para_wrapper-' + addComment.text_signature + ' div.reply_to_para' ).show();
 					}
-					jQuery( '#para_wrapper-' + textSig + ' div.reply_to_para' ).hide();
+					
+					// if we're cancelling, show all reply to links
+					if ( mode == 'cancel' && cp_promote_reading == '1' ) {
+						jQuery( 'div.reply_to_para' ).show();
+					} else {
+						jQuery( '#para_wrapper-' + textSig + ' div.reply_to_para' ).hide();
+					}
 					
 				}
 					
@@ -510,8 +516,9 @@ addComment = {
 				if ( cp_promote_reading == '0' ) {
 					jQuery( '#para_wrapper-' + textSig + ' div.reply_to_para' ).hide();
 				} else {
+					// if we're cancelling, show all reply to links
 					if ( mode == 'cancel' ) {
-						jQuery( '#para_wrapper-' + textSig + ' div.reply_to_para' ).show();
+						jQuery( 'div.reply_to_para' ).show();
 					} else {
 						jQuery( '#para_wrapper-' + textSig + ' div.reply_to_para' ).toggle();
 					}
