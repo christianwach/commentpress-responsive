@@ -2565,6 +2565,39 @@ p.comment-subscription-form
 
 /*
 --------------------------------------------------------------------------------
+Compatibility with Featured Comments plugin
+--------------------------------------------------------------------------------
+*/
+
+.feature-burry-comments
+{
+	margin: 0.3em 0 0 0;
+	float: right;
+	clear: right;
+	line-height: 0;
+}
+
+.feature-burry-comments a.feature-comments
+{
+	padding: 0;
+	font-size: 70%;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	color: #bbb;
+	text-decoration: none;
+}
+
+.feature-burry-comments a.feature-comments:hover
+{
+	color: #761D19;
+}
+
+
+
+
+
+/*
+--------------------------------------------------------------------------------
 Compatibility with Query Multiple Taxonomies plugin
 Best used with Simple Taxonomy plugin
 --------------------------------------------------------------------------------
