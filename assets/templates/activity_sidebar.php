@@ -106,10 +106,22 @@ include( $include );
 
 
 
+<?php 
+
+// allow plugins to add their own activity headings here
+do_action( 'commentpress_bp_activity_sidebar_before_activity' );
+
+?>
+
+
+
 <?php
 
 // show page comments if we can
 if ( $_is_commentable AND $_page_comments_output != '' ) {
+
+// allow plugins to add their own activity heading here
+do_action( 'commentpress_bp_activity_sidebar_before_page_comments' );
 
 ?><h3 class="activity_heading"><?php echo $page_comments_title; ?></h3>
 
@@ -121,6 +133,9 @@ if ( $_is_commentable AND $_page_comments_output != '' ) {
 
 <?php
 
+// allow plugins to add their own activity heading here
+do_action( 'commentpress_bp_activity_sidebar_after_page_comments' );
+
 } // end commentable post/page check
 
 
@@ -131,6 +146,9 @@ if ( $_is_commentable AND $_page_comments_output != '' ) {
 // show all comments from site if we can
 if ( $_all_comments_output != '' ) {
 
+// allow plugins to add their own activity heading here
+do_action( 'commentpress_bp_activity_sidebar_before_all_comments' );
+
 ?><h3 class="activity_heading"><?php echo $_all_comments_title; ?></h3>
 
 <div class="paragraph_wrapper all_comments_output">
@@ -140,6 +158,9 @@ if ( $_all_comments_output != '' ) {
 </div>
 
 <?php
+
+// allow plugins to add their own activity heading here
+do_action( 'commentpress_bp_activity_sidebar_after_all_comments' );
 
 } // end comments from site check
 
@@ -227,69 +248,77 @@ if (
 // access plugin
 global $commentpress_core, $post, $blog_id;
 
-// if we have the plugin enabled and it's BP
-if ( 
-	
+// if we have the plugin enabled and it's Multisite BP
+if (
+
 	// test for multisite buddypress
 	is_multisite() AND 
 	is_object( $commentpress_core ) AND 
-	$commentpress_core->is_buddypress() AND
-	
-	// either groupblog or main BP blog
-	( $commentpress_core->is_groupblog() OR BP_ROOT_BLOG == $blog_id )
+	$commentpress_core->is_buddypress()
 	
 ) {
 
 
 
-	// get activities	
-	if ( bp_has_activities( array(
 	
-		'scope' => 'groups',
-		'action' => 'new_groupblog_comment,new_groupblog_post',
-		
-	) ) ) :
+	// if on either groupblog or main BP blog
+	if ( $commentpress_core->is_groupblog() OR bp_is_root_blog() ) {
 	
-		// change header depending on logged in status
-		if ( is_user_logged_in() ) {
+		// get activities	
+		if ( bp_has_activities( array(
+	
+			'scope' => 'groups',
+			'action' => 'new_groupblog_comment,new_groupblog_post',
 		
-			// set default
-			$_section_header_text = apply_filters(
-				'cp_activity_tab_recent_title_all_yours', 
-				__( 'Recent Activity in your Documents', 'commentpress-theme' )
-			);
+		) ) ) :
+	
+			// change header depending on logged in status
+			if ( is_user_logged_in() ) {
+		
+				// set default
+				$_section_header_text = apply_filters(
+					'cp_activity_tab_recent_title_all_yours', 
+					__( 'Recent Activity in your Documents', 'commentpress-theme' )
+				);
 			
-		} else { 
+			} else { 
 		
-			// set default
-			$_section_header_text = apply_filters(
-				'cp_activity_tab_recent_title_all_public', 
-				__( 'Recent Activity in Public Documents', 'commentpress-theme' )
-			);
+				// set default
+				$_section_header_text = apply_filters(
+					'cp_activity_tab_recent_title_all_public', 
+					__( 'Recent Activity in Public Documents', 'commentpress-theme' )
+				);
 		
-		 } ?>
+			 } ?>
 
-		<h3 class="activity_heading"><?php echo $_section_header_text; ?></h3>
+			<h3 class="activity_heading"><?php echo $_section_header_text; ?></h3>
 		
-		<div class="paragraph_wrapper workshop_comments_output">
+			<div class="paragraph_wrapper workshop_comments_output">
 		
-		<ol class="comment_activity">
+			<ol class="comment_activity">
 	
-		<?php while ( bp_activities() ) : bp_the_activity(); ?>
+			<?php while ( bp_activities() ) : bp_the_activity(); ?>
 	 
-			<?php locate_template( array( 'activity/groupblog.php' ), true, false ); ?>
+				<?php locate_template( array( 'activity/groupblog.php' ), true, false ); ?>
 			
-		<?php endwhile; ?>
+			<?php endwhile; ?>
 		
-		</ol>
+			</ol>
 		
-		</div>
+			</div>
 	 
-	<?php endif; ?>
+		<?php endif; ?>
 
-
-
-	<?php 
+		<?php 
+	
+	} // end groupblog check
+	
+	
+	
+	// allow plugins to add their own activity headings here
+	do_action( 'commentpress_bp_activity_sidebar_before_members' );
+	
+	
 	
 	// get recently active members
 	if ( bp_has_members( 
@@ -390,9 +419,22 @@ if (
 	<?php endif; ?>
 	
 	
-<?php 
+	<?php 
 
+
+
+	// allow plugins to add their own activity headings here
+	do_action( 'commentpress_bp_activity_sidebar_after_members' );
+	
+	
+	
 } // end BP check
+
+
+
+// allow plugins to add their own activity headings here
+do_action( 'commentpress_bp_activity_sidebar_after_activity' );
+
 
 
 ?>
