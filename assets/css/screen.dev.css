@@ -1200,9 +1200,6 @@ div#respond > p
 	font-family: sans-serif;
 }
 
-#cpajax_error_msg
-
-
 #author_details,
 #comment_details
 {
@@ -1324,6 +1321,24 @@ div#respond .subscribe_reloaded_insert p
 	text-transform: uppercase;
 	font-size: 80%;
 	font-weight: bold;
+}
+
+
+
+/* AJAX highlighting */
+.comment-highlighted
+{
+	background-color: #c2d8bc;
+}
+
+.comment-fade
+{
+	-webkit-transition: background-color 1s ease;
+	-moz-transition: background-color 1s ease;
+	-o-transition: background-color 1s ease;
+	-ms-transition: background-color 1s ease;
+	transition: background-color 1s ease;
+	background-color: transparent;
 }
 
 
@@ -2571,10 +2586,16 @@ Compatibility with Featured Comments plugin
 
 .feature-burry-comments
 {
-	margin: 0.3em 0 0 0;
 	float: right;
 	clear: right;
-	line-height: 0;
+	line-height: 1;
+	margin-left: 2%;
+}
+
+#comments_in_page_wrapper .feature-burry-comments
+{
+	line-height: 0.8;
+	margin-left: 2%;
 }
 
 .feature-burry-comments a.feature-comments
