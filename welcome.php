@@ -18,7 +18,7 @@ $next_page_html = '';
 if ( $next_page_id != $post->ID ) {
 
 	// set the link
-	$next_page_html = '<a href="'.get_permalink( $next_page_id ).'" id="next_page" class="css_btn" title="'.$title.'">'.
+	$next_page_html = '<a href="'.get_permalink( $next_page_id ).'" id="next_page" class="css_btn" title="'.esc_attr( $title ).'">'.
 							$title.
 					  '</a>';
 }

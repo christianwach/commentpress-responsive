@@ -165,7 +165,7 @@ if ( $my_name != '' ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<li>
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?> (<?php the_time('F jS, Y'); ?>)</a>
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title_attribute(); ?>"><?php the_title(); ?> (<?php the_time('F jS, Y'); ?>)</a>
 		</li>
 
 	<?php endwhile; ?>
@@ -219,7 +219,7 @@ if ( $_pages->have_posts() ) {
 	while ( $_pages->have_posts() ) : $_pages->the_post(); ?>
 	
 		<li>
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a>
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 		</li>
 
 	<?php
