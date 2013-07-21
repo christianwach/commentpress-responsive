@@ -93,7 +93,11 @@ Updated by Christian Wach for CommentPress Core
 	/* JetPack sharing */
 	div.sharedaddy, 
 	#content div.sharedaddy, 
-	#main div.sharedaddy
+	#main div.sharedaddy,
+	/* Featured Comments */
+	div.feature-burry-comments,
+	/* Comment Upvoter */
+	.comment-upvote
 	{
 		display: none !important;
 	}
