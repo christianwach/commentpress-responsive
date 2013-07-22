@@ -1093,16 +1093,17 @@ p.comment_activity_date
 .comment-identifier .comment-edit a,
 .comment-identifier .comment-assign
 {
-	font-size: 70%;
 	text-transform: uppercase;
 	font-family: sans-serif;
 	color: #bbb;
 	text-decoration: none;
 }
 
-.comment-identifier .comment-edit
+.comment-identifier .comment-edit,
+.comment-identifier .comment-assign
 {
 	margin-left: 2%;
+	font-size: 70%;
 }
 
 .comment-content
@@ -1325,6 +1326,8 @@ div#respond .subscribe_reloaded_insert p
 
 
 
+
+
 /* AJAX highlighting */
 .comment-highlighted
 {
@@ -1339,6 +1342,30 @@ div#respond .subscribe_reloaded_insert p
 	-ms-transition: background-color 1s ease;
 	transition: background-color 1s ease;
 	background-color: transparent;
+}
+
+.notransition 
+{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+.comments_container > h3.heading-highlighted
+{
+	background-color: #c2d8bc;
+}
+
+.comments_container > h3.heading-highlighted.heading-fade
+{
+	-webkit-transition: background-color 1s ease;
+	-moz-transition: background-color 1s ease;
+	-o-transition: background-color 1s ease;
+	-ms-transition: background-color 1s ease;
+	transition: background-color 1s ease;
+	background-color: #BDBDBD;
 }
 
 
